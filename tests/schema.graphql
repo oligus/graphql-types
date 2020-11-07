@@ -1,0 +1,10 @@
+
+scalar UUID
+
+type Test {
+    id: UUID
+}
+
+type Query {
+    test: Test
+}
