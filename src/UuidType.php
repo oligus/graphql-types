@@ -13,9 +13,8 @@ use Ramsey\Uuid\Uuid;
 
 class UuidType extends ScalarType
 {
-    /**
-     * @var string $name
-     */
+    use ScalarConfigTrait;
+
     public $name = 'UUID';
 
     public $description = 'The `UUID` scalar type represents a universally unique identifier (UUID), according to RFC 4122.';

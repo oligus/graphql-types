@@ -1,10 +1,12 @@
 
 scalar UUID
+scalar Money
 
-type Test {
+type Record {
     id: UUID
+    price: Money
 }
 
 type Query {
-    test: Test
+    record: Record
 }

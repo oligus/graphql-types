@@ -17,8 +17,7 @@ class TestCase extends PHPUnit_TestCase
     public function query(string $query, array $variables = [])
     {
         if (!$this->schema instanceof Schema) {
-            $typeConfigDecorator = new TypeConfigDecorator();
-            $this->schema = BuildSchema::build(file_get_contents(TEST_PATH . '/schema.graphql'), $typeConfigDecorator::resolve());
+            $this->schema = BuildSchema::build(file_get_contents(TEST_PATH . '/schema.graphql'), TypeConfigDecorator::resolve());
         }
 
         try {

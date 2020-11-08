@@ -6,27 +6,18 @@ class TypeConfigDecorator
 {
     public static function resolve()
     {
-       return function(array $typeConfig)
-       {
-           switch($typeConfig['name']) {
-               case 'UUID':
-                   $uuid = new UuidType();
+        return function (array $typeConfig) {
+            switch ($typeConfig['name']) {
+                case 'UUID':
+                    $typeConfig = array_merge($typeConfig, UuidType::config());
+                    break;
 
-                   $typeConfig = array_merge($typeConfig, [
-                       'serialize' => function($value) use ($uuid) {
-                           return $uuid->serialize($value);
-                       },
-                       'parseValue' => function($value) use ($uuid) {
-                           return $uuid->parseValue($value);
-                       },
-                       'parseLiteral' => function($ast) use ($uuid) {
-                           return $uuid->parseLiteral($ast);
-                       }
-                   ]);
-                   break;
-           }
+                case 'Money':
+                    $typeConfig = array_merge($typeConfig, MoneyType::config());
+                    break;
+            }
 
-           return $typeConfig;
-       };
+            return $typeConfig;
+        };
     }
 }

@@ -19,8 +19,8 @@
         "coverage": "vendor/bin/phpunit --log-junit ./test-reports/junit.xml",
         "clover": "vendor/bin/phpunit --coverage-clover tests/coverage/clover.xml",
         "watch": "vendor/bin/phpunit-watcher watch",
-        "lint": "vendor/bin/phpcs ./app",
-        "lint-fix": "vendor/bin/phpcbf ./app",
+        "lint": "phpcs ./src",
+        "lint-fix": "phpcbf ./src",
         "analyze": "vendor/bin/phan --color --progress-bar",
         "analyze-noop": "vendor/bin/phan --no-progress-bar",
         "md": "phpmd app text phpmd.xml",
@@ -30,7 +30,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.4",
-        "ramsey/uuid": "^4.1"
+        "ramsey/uuid": "^4.1",
+        "moneyphp/money": "^3.3"
     },
     "require-dev": {
         "phan/phan": "^3.2",

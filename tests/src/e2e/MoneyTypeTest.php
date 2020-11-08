@@ -5,13 +5,13 @@ namespace Test\Types\e2e;
 use Test\TestCase;
 use Spatie\Snapshots\MatchesSnapshots;;
 
-class UuidTypeTest extends TestCase
+class MoneyTypeTest extends TestCase
 {
     use MatchesSnapshots;
 
     public function testQuery()
     {
-        $result = $this->query('{ record { id } }', []);
+        $result = $this->query('{ record { price } }', []);
         $this->assertMatchesSnapshot($result);
     }
 }

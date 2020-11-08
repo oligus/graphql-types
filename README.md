@@ -1,12 +1,14 @@
 # Generic GraphQL Types
 
+A collection of generic types
+## Quick start
+
 ## Adding types
 
 ##### With type decorator
 
 ```php
-$typeConfigDecorator = new TypeConfigDecorator();
-$schema = BuildSchema::build($source, $typeConfigDecorator::resolve());
+$schema = BuildSchema::build($source, TypeConfigDecorator::resolve());
 ```
 
 If you already have a type config decorator, you can add specific types to your current type config decorator:
@@ -15,20 +17,8 @@ If you already have a type config decorator, you can add specific types to your 
 ...
 switch($typeConfig['name']) {
     case 'UUID':
-        $uuid = new UuidType();
-
-        $typeConfig = array_merge($typeConfig, [
-            'serialize' => function($value) use ($uuid) {
-                return $uuid->serialize($value);
-            },
-            'parseValue' => function($value) use ($uuid) {
-                return $uuid->parseValue($value);
-            },
-            'parseLiteral' => function($ast) use ($uuid) {
-                return $uuid->parseLiteral($ast);
-            }
-        ]);
-    break;
+        $typeConfig = array_merge($typeConfig, UuidType::config());
+        break;
 }
 ...
 ```
@@ -41,8 +31,22 @@ You can also just add types directly
 $uuid = new UuidType();
 ```
 
+## Money
+
+The `Money` scalar type represents the lowest denominator of a currency. 
+
+Will resolve to [moneyphp/money](https://github.com/moneyphp/money) type.
+
+_GraphQL definition:_
+```graphql
+scalar Money
+```
+
 ## UUID
 
+The `UUID` scalar type represents a universally unique identifier (UUID). 
+
+Will resolve to [ramsey/uuid](https://github.com/ramsey/uuid) type.
 
 _GraphQL definition:_
 ```graphql

@@ -2,6 +2,7 @@
 
 namespace Test;
 
+use Money\Money;
 use Ramsey\Uuid\Uuid;
 
 class RootValue
@@ -9,9 +10,10 @@ class RootValue
     public static function resolve()
     {
         return [
-            'test' => function($rootValue, $args, $context) {
+            'record' => function($rootValue, $args, $context) {
                 return [
-                    'id' => Uuid::fromString('3716cda3-81dd-4297-952a-38ef744218bb')
+                    'id' => Uuid::fromString('3716cda3-81dd-4297-952a-38ef744218bb'),
+                    'price' => Money::USD(1999)
                 ];
             },
         ];
