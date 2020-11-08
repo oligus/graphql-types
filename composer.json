@@ -15,23 +15,23 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "coverage": "vendor/bin/phpunit --log-junit ./test-reports/junit.xml",
-        "clover": "vendor/bin/phpunit --coverage-clover tests/coverage/clover.xml",
-        "watch": "vendor/bin/phpunit-watcher watch",
-        "lint": "phpcs ./src",
-        "lint-fix": "phpcbf ./src",
-        "analyze": "vendor/bin/phan --color --progress-bar",
-        "analyze-noop": "vendor/bin/phan --no-progress-bar",
-        "md": "phpmd app text phpmd.xml",
-        "md-xml": "phpmd app xml phpmd.xml",
-        "all": "phpunit; phpcs app; phpmd app text phpmd.xml; phan --color --progress-bar"
+        "test": "phpunit",
+        "coverage": "phpunit --log-junit ./test-reports/junit.xml",
+        "clover": "phpunit --coverage-clover tests/coverage/clover.xml",
+        "lint": "phpcs src",
+        "lint-fix": "phpcbf src",
+        "analyze": "phan --color --progress-bar",
+        "analyze-noop": "phan --no-progress-bar",
+        "md": "phpmd src text phpmd.xml",
+        "md-xml": "phpmd src xml phpmd.xml",
+        "all": "phpunit; phpcs src; phpmd src text phpmd.xml; phan --color --progress-bar"
     },
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.4",
         "ramsey/uuid": "^4.1",
-        "moneyphp/money": "^3.3"
+        "moneyphp/money": "^3.3",
+        "webonyx/graphql-php": "^14.3"
     },
     "require-dev": {
         "phan/phan": "^3.2",
@@ -39,7 +39,6 @@
         "symfony/var-dumper": "^5.1",
         "phpmd/phpmd": "^2.9",
         "squizlabs/php_codesniffer": "^3.5",
-        "webonyx/graphql-php": "^14.3",
         "spatie/phpunit-snapshot-assertions": "^4.2"
     },
     "autoload": {

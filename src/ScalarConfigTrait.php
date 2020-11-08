@@ -2,21 +2,59 @@
 
 namespace GraphQLTypes;
 
+use Closure;
+use Exception;
+use GraphQL\Error\Error;
+use GraphQL\Type\Definition\ScalarType;
+
+/**
+ * Trait ScalarConfigTrait
+ * @package GraphQLTypes
+ */
 trait ScalarConfigTrait
 {
+    /**
+     * @return Closure[]
+     * @throws error
+     * @phan-suppress PhanUndeclaredMethod
+     */
     public static function config(): array
     {
-        $scalar = new self();
+        $class = self::class;
+
+        /**
+         * TODO: Initiate parent class in a better way?
+         * @var ScalarType $scalar
+         */
+        $scalar = new $class;
+
+        if (!$scalar instanceof ScalarType) {
+            throw new Error('Not instance of ScalarType');
+        }
 
         return [
-            'serialize' => function ($value) use ($scalar) {
+            /**
+             * @param mixed $value
+             * @throws Error
+             */
+            'serialize' => function ($value) use ($scalar): string {
                 return $scalar->serialize($value);
             },
+            /**
+             * @param mixed $value
+             * @return mixed
+             * @throws Error
+             */
             'parseValue' => function ($value) use ($scalar) {
                 return $scalar->parseValue($value);
             },
-            'parseLiteral' => function ($ast) use ($scalar) {
-                return $scalar->parseLiteral($ast);
+            /**
+             * @param mixed $node
+             * @return mixed
+             * @throws Exception
+             */
+            'parseLiteral' => function ($node) use ($scalar) {
+                return $scalar->parseLiteral($node);
             }
         ];
     }

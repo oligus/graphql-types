@@ -2,11 +2,23 @@
 
 namespace GraphQLTypes;
 
+use Closure;
+use GraphQL\Error\Error;
+
+/**
+ * Class TypeConfigDecorator
+ * @package GraphQLTypes
+ */
 class TypeConfigDecorator
 {
-    public static function resolve()
+    public static function resolve(): Closure
     {
-        return function (array $typeConfig) {
+        /**
+         * @param array<mixed> $typeConfig
+         * @throws Error
+         * @return array<mixed>
+         */
+        return function (array $typeConfig) : array {
             switch ($typeConfig['name']) {
                 case 'UUID':
                     $typeConfig = array_merge($typeConfig, UuidType::config());

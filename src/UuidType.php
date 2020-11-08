@@ -11,14 +11,28 @@ use GraphQL\Language\AST\Node;
 use Ramsey\Uuid\UuidInterface;
 use Ramsey\Uuid\Uuid;
 
+/**
+ * Class UuidType
+ * @package GraphQLTypes
+ */
 class UuidType extends ScalarType
 {
     use ScalarConfigTrait;
 
+    /**
+     * @var string $name
+     */
     public $name = 'UUID';
 
+    /**
+     * @var string $description
+     */
     public $description = 'The `UUID` scalar type represents a universally unique identifier (UUID), according to RFC 4122.';
 
+    /**
+     * @param mixed $value
+     * @throws InvariantViolation
+     */
     public function serialize($value): string
     {
         if (!$value instanceof UuidInterface) {
@@ -28,6 +42,10 @@ class UuidType extends ScalarType
         return $value->toString();
     }
 
+    /**
+     * @param mixed $value
+     * @throws Error
+     */
     public function parseValue($value): UuidInterface
     {
         if (!Uuid::isValid($value)) {
@@ -37,7 +55,13 @@ class UuidType extends ScalarType
         return Uuid::fromString($value);
     }
 
-    public function parseLiteral($valueNode, ?array $variables = null): UuidInterface
+    /**
+     * @param array<mixed>|null $variables
+     * @throws Error
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @phan-suppress PhanUnusedPublicMethodParameter
+     */
+    public function parseLiteral(Node $valueNode, ?array $variables = null): UuidInterface
     {
         if (!$valueNode instanceof Node) {
             throw new Error('Query error: Unknown node type');

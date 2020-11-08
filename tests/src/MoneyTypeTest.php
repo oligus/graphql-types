@@ -85,17 +85,6 @@ class MoneyTypeTest extends TestCase
     /**
      * @throws Error
      */
-    public function testParseLiteralExceptionUnknownNode()
-    {
-        $this->expectException(Error::class);
-        $this->expectExceptionMessage('Query error: Unknown node type');
-        $moneyType = new MoneyType();
-        $moneyType->parseLiteral(null);
-    }
-
-    /**
-     * @throws Error
-     */
     public function testParseLiteralExceptionString()
     {
         $this->expectException(Error::class);
