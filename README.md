@@ -1,6 +1,11 @@
 # Generic GraphQL Types
 
-A collection of generic types
+[![Build Status](https://travis-ci.org/oligus/graphql-types.svg?branch=master)](https://travis-ci.org/oligus/graphql-types)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Codecov.io](https://codecov.io/gh/oligus/graphql-typed/branch/master/graphs/badge.svg)](https://codecov.io/gh/oligus/graphql-typed)
+
+A collection of generic types for use with [webonyx/graphql-php](https://github.com/webonyx/graphql-php)
+
 ## Quick start
 
 ## Adding types
