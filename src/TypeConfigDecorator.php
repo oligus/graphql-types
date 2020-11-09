@@ -27,6 +27,10 @@ class TypeConfigDecorator
                 case 'Money':
                     $typeConfig = array_merge($typeConfig, MoneyType::config());
                     break;
+
+                case 'Email':
+                    $typeConfig = array_merge($typeConfig, EmailType::config());
+                    break;
             }
 
             return $typeConfig;

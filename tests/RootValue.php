@@ -13,7 +13,8 @@ class RootValue
             'record' => function($rootValue, $args, $context) {
                 return [
                     'id' => Uuid::fromString('3716cda3-81dd-4297-952a-38ef744218bb'),
-                    'price' => Money::USD(1999)
+                    'price' => Money::USD(1999),
+                    'email' => 'test@test.com'
                 ];
             },
         ];

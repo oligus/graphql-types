@@ -8,6 +8,12 @@ A collection of generic types for use with [webonyx/graphql-php](https://github.
 
 ## Quick start
 
+## TOC
+- [Scalar types](README.md#scalar-types)
+  - [Email](README.md#email)
+  - [Money](README.md#money)
+  - [Email](README.md#uuid)
+
 ## Adding types
 
 ##### With type decorator
@@ -34,6 +40,17 @@ You can also just add types directly
 
 ```php
 $uuid = new UuidType();
+```
+
+# Scalar types
+
+## Email
+
+Standard email validation
+
+_GraphQL definition:_
+```graphql
+scalar Email
 ```
 
 ## Money

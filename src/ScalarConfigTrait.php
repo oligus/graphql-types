@@ -10,6 +10,7 @@ use GraphQL\Type\Definition\ScalarType;
 /**
  * Trait ScalarConfigTrait
  * @package GraphQLTypes
+ * @SuppressWarnings(PHPMD.MissingImport)
  */
 trait ScalarConfigTrait
 {
