@@ -16,8 +16,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "coverage": "phpunit --log-junit ./test-reports/junit.xml",
-        "clover": "phpunit --coverage-clover tests/coverage/clover.xml",
+        "test-coverage": "phpunit --coverage-clover=coverage.xml",
         "lint": "phpcs src",
         "lint-fix": "phpcbf src",
         "analyze": "phan --color --progress-bar",
