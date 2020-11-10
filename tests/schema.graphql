@@ -2,11 +2,13 @@
 scalar UUID
 scalar Money
 scalar Email
+scalar URL
 
 type Record {
     id: UUID
     price: Money
     email: Email
+    url: URL
 }
 
 type Query {

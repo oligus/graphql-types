@@ -1,0 +1,7 @@
+{
+    "data": {
+        "record": {
+            "url": "http:\/\/www.google.com\/another\/path"
+        }
+    }
+}
