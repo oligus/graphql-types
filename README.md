@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/oligus/graphql-types.svg?branch=master)](https://travis-ci.org/oligus/graphql-types)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Codecov.io](https://codecov.io/gh/oligus/graphql-typed/branch/master/graphs/badge.svg)](https://codecov.io/gh/oligus/graphql-typed)
+[![Codecov.io](https://codecov.io/gh/oligus/graphql-types/branch/master/graphs/badge.svg)](https://codecov.io/gh/oligus/graphql-types)
 
 A collection of generic types for use with [webonyx/graphql-php](https://github.com/webonyx/graphql-php)
 
@@ -12,7 +12,8 @@ A collection of generic types for use with [webonyx/graphql-php](https://github.
 - [Scalar types](README.md#scalar-types)
   - [Email](README.md#email)
   - [Money](README.md#money)
-  - [Email](README.md#uuid)
+  - [UUID](README.md#uuid)
+  - [URL](README.md#url)
 
 ## Adding types
 
@@ -73,4 +74,13 @@ Will resolve to [ramsey/uuid](https://github.com/ramsey/uuid) type.
 _GraphQL definition:_
 ```graphql
 scalar UUID
+```
+
+## URL
+
+`URL` a Uniform Resource Locator. 
+
+_GraphQL definition:_
+```graphql
+scalar URL
 ```

@@ -31,6 +31,10 @@ class TypeConfigDecorator
                 case 'Email':
                     $typeConfig = array_merge($typeConfig, EmailType::config());
                     break;
+
+                case 'URL':
+                    $typeConfig = array_merge($typeConfig, UrlType::config());
+                    break;
             }
 
             return $typeConfig;
