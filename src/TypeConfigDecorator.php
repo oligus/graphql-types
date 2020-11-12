@@ -35,6 +35,10 @@ class TypeConfigDecorator
                 case 'URL':
                     $typeConfig = array_merge($typeConfig, UrlType::config());
                     break;
+
+                case 'DateTime':
+                    $typeConfig = array_merge($typeConfig, DateTimeType::config());
+                    break;
             }
 
             return $typeConfig;

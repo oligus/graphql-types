@@ -1,8 +1,8 @@
 # Generic GraphQL Types
 
-[![Build Status](https://travis-ci.org/oligus/graphql-types.svg?branch=master)](https://travis-ci.org/oligus/graphql-types)
+[![Build Status](https://travis-ci.org/oligus/graphql-types.svg?branch=main)](https://travis-ci.org/oligus/graphql-types)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Codecov.io](https://codecov.io/gh/oligus/graphql-types/branch/master/graphs/badge.svg)](https://codecov.io/gh/oligus/graphql-types)
+[![Codecov.io](https://codecov.io/gh/oligus/graphql-types/branch/main/graphs/badge.svg)](https://codecov.io/gh/oligus/graphql-types)
 
 A collection of generic types for use with [webonyx/graphql-php](https://github.com/webonyx/graphql-php)
 
@@ -10,6 +10,7 @@ A collection of generic types for use with [webonyx/graphql-php](https://github.
 
 ## TOC
 - [Scalar types](README.md#scalar-types)
+  - [DateTime](README.md#datetime)
   - [Email](README.md#email)
   - [Money](README.md#money)
   - [UUID](README.md#uuid)
@@ -44,6 +45,25 @@ $uuid = new UuidType();
 ```
 
 # Scalar types
+
+## DateTime
+
+The `DateTime` scalar type represents time data, represented as an ISO-8601 encoded UTC date string.
+
+_GraphQL definition:_
+```graphql
+scalar DateTime
+```
+_Query result:_
+```graphql
+{
+    "data": {
+        "record": {
+            "dateTime": "2020-11-05T12:33:45+00:00"
+        }
+    }
+}
+```
 
 ## Email
 
