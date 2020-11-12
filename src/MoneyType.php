@@ -12,7 +12,7 @@ use GraphQL\Language\AST\Node;
 
 /**
  * Class MoneyType
- * @package GraphQLUtils\Types\Scalars
+ * @package GraphQLTypes
  */
 class MoneyType extends ScalarType
 {
