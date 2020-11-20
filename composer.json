@@ -30,7 +30,8 @@
         "php": ">=7.4",
         "ramsey/uuid": "^4.1",
         "moneyphp/money": "^3.3",
-        "webonyx/graphql-php": "^14.3"
+        "webonyx/graphql-php": "^14.3",
+        "myclabs/php-enum": "^1.7"
     },
     "require-dev": {
         "phan/phan": "^3.2",
